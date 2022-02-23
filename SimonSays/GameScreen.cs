@@ -167,16 +167,17 @@ namespace SimonSays
         {
             GraphicsPath circlePath = new GraphicsPath();
             GraphicsPath excludePath = new GraphicsPath();
-            circlePath.AddEllipse(0, 5, 240, 240);
-            
+            circlePath.AddEllipse(5, 5, 280, 240);
+            excludePath.AddEllipse(85, 85, 100, 100);
 
 
             Region buttonRegion = new Region(circlePath);
+            buttonRegion.Exclude(excludePath);
 
             greenButton.Region = buttonRegion;
 
             Matrix transformMatrix = new Matrix();
-            transformMatrix.RotateAt(90, new PointF(0, 0));
+            transformMatrix.RotateAt(90, new PointF(63, 63));
             buttonRegion.Transform(transformMatrix);
 
             redButton.Region = buttonRegion;
