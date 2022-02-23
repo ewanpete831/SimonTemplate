@@ -37,10 +37,11 @@
             // yellowButton
             // 
             this.yellowButton.BackColor = System.Drawing.Color.Goldenrod;
-            this.yellowButton.Location = new System.Drawing.Point(60, 229);
+            this.yellowButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.yellowButton.Location = new System.Drawing.Point(25, 229);
             this.yellowButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.yellowButton.Name = "yellowButton";
-            this.yellowButton.Size = new System.Drawing.Size(165, 169);
+            this.yellowButton.Size = new System.Drawing.Size(199, 191);
             this.yellowButton.TabIndex = 3;
             this.yellowButton.UseVisualStyleBackColor = false;
             this.yellowButton.Click += new System.EventHandler(this.yellowButton_Click_1);
@@ -48,10 +49,11 @@
             // blueButton
             // 
             this.blueButton.BackColor = System.Drawing.Color.DarkBlue;
+            this.blueButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.blueButton.Location = new System.Drawing.Point(228, 229);
             this.blueButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.blueButton.Name = "blueButton";
-            this.blueButton.Size = new System.Drawing.Size(165, 169);
+            this.blueButton.Size = new System.Drawing.Size(189, 192);
             this.blueButton.TabIndex = 2;
             this.blueButton.UseVisualStyleBackColor = false;
             this.blueButton.Click += new System.EventHandler(this.blueButton_Click_1);
@@ -59,10 +61,11 @@
             // redButton
             // 
             this.redButton.BackColor = System.Drawing.Color.DarkRed;
-            this.redButton.Location = new System.Drawing.Point(228, 57);
+            this.redButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.redButton.Location = new System.Drawing.Point(228, 46);
             this.redButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.redButton.Name = "redButton";
-            this.redButton.Size = new System.Drawing.Size(165, 169);
+            this.redButton.Size = new System.Drawing.Size(189, 181);
             this.redButton.TabIndex = 1;
             this.redButton.UseVisualStyleBackColor = false;
             this.redButton.Click += new System.EventHandler(this.redButton_Click_1);
@@ -70,10 +73,11 @@
             // greenButton
             // 
             this.greenButton.BackColor = System.Drawing.Color.ForestGreen;
-            this.greenButton.Location = new System.Drawing.Point(60, 57);
+            this.greenButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.greenButton.Location = new System.Drawing.Point(25, 46);
             this.greenButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.greenButton.Name = "greenButton";
-            this.greenButton.Size = new System.Drawing.Size(165, 169);
+            this.greenButton.Size = new System.Drawing.Size(199, 180);
             this.greenButton.TabIndex = 0;
             this.greenButton.UseVisualStyleBackColor = false;
             this.greenButton.Click += new System.EventHandler(this.greenButton_Click);

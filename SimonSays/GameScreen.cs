@@ -9,12 +9,14 @@ using System.Windows.Forms;
 using System.Media;
 using System.Drawing.Drawing2D;
 using System.Threading;
+using System.Drawing.Drawing2D;
 
 namespace SimonSays
 {
     public partial class GameScreen : UserControl
     {
         int guesses = 0;
+
         public GameScreen()
         {
             InitializeComponent();
@@ -22,6 +24,7 @@ namespace SimonSays
 
         private void GameScreen_Load(object sender, EventArgs e)
         {
+            createRegions();
             Form1.order.Clear();
             Refresh();
             ComputerTurn();
@@ -31,11 +34,11 @@ namespace SimonSays
         {
             Thread.Sleep(1000);
             Random randNum = new Random();
-            Form1.order.Add(randNum.Next(0,4));
+            Form1.order.Add(randNum.Next(0, 4));
 
             for (int i = 0; i < Form1.order.Count(); i++)
             {
-                if(Form1.order[i] == 0)
+                if (Form1.order[i] == 0)
                 {
                     greenButton.BackColor = Color.Lime;
                     Refresh();
@@ -43,7 +46,7 @@ namespace SimonSays
                     greenButton.BackColor = Color.ForestGreen;
                     Refresh();
                 }
-                else if(Form1.order[i] == 1)
+                else if (Form1.order[i] == 1)
                 {
                     redButton.BackColor = Color.Red;
                     Refresh();
@@ -77,7 +80,6 @@ namespace SimonSays
             Form1.ChangeScreen(this, new GameOverScreen());
         }
 
-
         private void greenButton_Click(object sender, EventArgs e)
         {
             greenButton.BackColor = Color.Lime;
@@ -88,7 +90,7 @@ namespace SimonSays
             if (Form1.order[guesses] == 0)
             {
                 guesses++;
-                if(guesses == Form1.order.Count())
+                if (guesses == Form1.order.Count())
                 {
                     ComputerTurn();
                 }
@@ -159,6 +161,33 @@ namespace SimonSays
             {
                 GameOver();
             }
+        }
+
+        private void createRegions()
+        {
+            GraphicsPath circlePath = new GraphicsPath();
+            GraphicsPath excludePath = new GraphicsPath();
+            circlePath.AddEllipse(0, 5, 240, 240);
+            
+
+
+            Region buttonRegion = new Region(circlePath);
+
+            greenButton.Region = buttonRegion;
+
+            Matrix transformMatrix = new Matrix();
+            transformMatrix.RotateAt(90, new PointF(0, 0));
+            buttonRegion.Transform(transformMatrix);
+
+            redButton.Region = buttonRegion;
+
+            buttonRegion.Transform(transformMatrix);
+
+            blueButton.Region = buttonRegion;
+
+            buttonRegion.Transform(transformMatrix);
+
+            yellowButton.Region = buttonRegion;
         }
     }
 }
