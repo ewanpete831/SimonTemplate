@@ -28,25 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuScreen));
             this.exitButton = new System.Windows.Forms.Button();
             this.newButton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.simonLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // exitButton
             // 
-            this.exitButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.exitButton.BackColor = System.Drawing.Color.DarkRed;
             this.exitButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.exitButton.FlatAppearance.BorderSize = 0;
             this.exitButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
-            this.exitButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.exitButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exitButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitButton.ForeColor = System.Drawing.Color.White;
-            this.exitButton.Location = new System.Drawing.Point(24, 78);
+            this.exitButton.Location = new System.Drawing.Point(232, 218);
             this.exitButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(126, 49);
+            this.exitButton.Size = new System.Drawing.Size(206, 214);
             this.exitButton.TabIndex = 19;
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = false;
@@ -54,7 +56,7 @@
             // 
             // newButton
             // 
-            this.newButton.BackColor = System.Drawing.Color.RoyalBlue;
+            this.newButton.BackColor = System.Drawing.Color.DarkGreen;
             this.newButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.newButton.FlatAppearance.BorderSize = 0;
             this.newButton.FlatAppearance.CheckedBackColor = System.Drawing.Color.White;
@@ -62,26 +64,51 @@
             this.newButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.newButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newButton.ForeColor = System.Drawing.Color.White;
-            this.newButton.Location = new System.Drawing.Point(24, 20);
+            this.newButton.Location = new System.Drawing.Point(18, 218);
             this.newButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.newButton.Name = "newButton";
-            this.newButton.Size = new System.Drawing.Size(126, 49);
+            this.newButton.Size = new System.Drawing.Size(206, 214);
             this.newButton.TabIndex = 18;
-            this.newButton.Text = "New Game";
+            this.newButton.Text = "Play";
             this.newButton.UseVisualStyleBackColor = false;
             this.newButton.Click += new System.EventHandler(this.newButton_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::SimonSays.Properties.Resources.simonBG;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(-19, 198);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(499, 286);
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
+            // 
+            // simonLabel
+            // 
+            this.simonLabel.Font = new System.Drawing.Font("Comic Sans MS", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simonLabel.ForeColor = System.Drawing.Color.Salmon;
+            this.simonLabel.Location = new System.Drawing.Point(3, 27);
+            this.simonLabel.Name = "simonLabel";
+            this.simonLabel.Size = new System.Drawing.Size(446, 123);
+            this.simonLabel.TabIndex = 21;
+            this.simonLabel.Text = "Simon";
+            this.simonLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MenuScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Transparent;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(52)))), ((int)(((byte)(52)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Controls.Add(this.simonLabel);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.newButton);
+            this.Controls.Add(this.pictureBox1);
+            this.DoubleBuffered = true;
             this.Name = "MenuScreen";
             this.Size = new System.Drawing.Size(452, 453);
+            this.Load += new System.EventHandler(this.MenuScreen_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -90,5 +117,7 @@
 
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button newButton;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label simonLabel;
     }
 }

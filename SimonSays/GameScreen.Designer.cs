@@ -50,7 +50,7 @@
             // 
             this.blueButton.BackColor = System.Drawing.Color.DarkBlue;
             this.blueButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.blueButton.Location = new System.Drawing.Point(229, 235);
+            this.blueButton.Location = new System.Drawing.Point(230, 235);
             this.blueButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.blueButton.Name = "blueButton";
             this.blueButton.Size = new System.Drawing.Size(200, 200);

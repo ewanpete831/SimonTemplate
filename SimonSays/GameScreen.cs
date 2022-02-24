@@ -9,14 +9,17 @@ using System.Windows.Forms;
 using System.Media;
 using System.Drawing.Drawing2D;
 using System.Threading;
-using System.Drawing.Drawing2D;
 
 namespace SimonSays
 {
     public partial class GameScreen : UserControl
     {
         int guesses = 0;
-
+        SoundPlayer soundGreen = new SoundPlayer(Properties.Resources.green);
+        SoundPlayer soundBlue = new SoundPlayer(Properties.Resources.blue);
+        SoundPlayer soundYellow = new SoundPlayer(Properties.Resources.yellow);
+        SoundPlayer soundRed = new SoundPlayer(Properties.Resources.red);
+        SoundPlayer soundGameOver = new SoundPlayer(Properties.Resources.mistake);
         public GameScreen()
         {
             InitializeComponent();
@@ -41,6 +44,7 @@ namespace SimonSays
                 if (Form1.order[i] == 0)
                 {
                     greenButton.BackColor = Color.Lime;
+                    soundGreen.Play();
                     Refresh();
                     Thread.Sleep(500);
                     greenButton.BackColor = Color.ForestGreen;
@@ -49,6 +53,7 @@ namespace SimonSays
                 else if (Form1.order[i] == 1)
                 {
                     redButton.BackColor = Color.Red;
+                    soundRed.Play();
                     Refresh();
                     Thread.Sleep(500);
                     redButton.BackColor = Color.DarkRed;
@@ -57,6 +62,7 @@ namespace SimonSays
                 else if (Form1.order[i] == 2)
                 {
                     yellowButton.BackColor = Color.Yellow;
+                    soundYellow.Play();
                     Refresh();
                     Thread.Sleep(500);
                     yellowButton.BackColor = Color.Goldenrod;
@@ -65,6 +71,7 @@ namespace SimonSays
                 else if (Form1.order[i] == 3)
                 {
                     blueButton.BackColor = Color.RoyalBlue;
+                    soundBlue.Play();
                     Refresh();
                     Thread.Sleep(500);
                     blueButton.BackColor = Color.DarkBlue;
@@ -83,93 +90,57 @@ namespace SimonSays
         private void greenButton_Click(object sender, EventArgs e)
         {
             greenButton.BackColor = Color.Lime;
+            soundGreen.Play();
             Refresh();
             Thread.Sleep(200);
             greenButton.BackColor = Color.ForestGreen;
             Refresh();
-            if (Form1.order[guesses] == 0)
-            {
-                guesses++;
-                if (guesses == Form1.order.Count())
-                {
-                    ComputerTurn();
-                }
-            }
-            else
-            {
-                GameOver();
-            }
+
+            testButtonColour(0);
+
         }
         private void redButton_Click_1(object sender, EventArgs e)
         {
             redButton.BackColor = Color.Red;
+            soundRed.Play();
             Refresh();
             Thread.Sleep(200);
             redButton.BackColor = Color.DarkRed;
             Refresh();
-            if (Form1.order[guesses] == 1)
-            {
-                guesses++;
-                if (guesses == Form1.order.Count())
-                {
-                    ComputerTurn();
-                }
-            }
-            else
-            {
-                GameOver();
-            }
+
+            testButtonColour(1);
         }
 
         private void yellowButton_Click_1(object sender, EventArgs e)
         {
             yellowButton.BackColor = Color.Yellow;
+            soundYellow.Play();
             Refresh();
             Thread.Sleep(200);
             yellowButton.BackColor = Color.Goldenrod;
             Refresh();
-            if (Form1.order[guesses] == 2)
-            {
-                guesses++;
-                if (guesses == Form1.order.Count())
-                {
-                    ComputerTurn();
-                }
-            }
-            else
-            {
-                GameOver();
-            }
+
+            testButtonColour(2);
         }
 
         private void blueButton_Click_1(object sender, EventArgs e)
         {
             blueButton.BackColor = Color.RoyalBlue;
+            soundBlue.Play();
             Refresh();
             Thread.Sleep(200);
             blueButton.BackColor = Color.DarkBlue;
             Refresh();
-            if (Form1.order[guesses] == 3)
-            {
-                guesses++;
-                if (guesses == Form1.order.Count())
-                {
-                    ComputerTurn();
-                }
-            }
-            else
-            {
-                GameOver();
-            }
+
+            testButtonColour(3);
         }
 
         private void createRegions()
         {
             GraphicsPath circlePath = new GraphicsPath();
             GraphicsPath excludePath = new GraphicsPath();
-            circlePath.AddEllipse(5, 5, 280, 240);
+            circlePath.AddEllipse(5, 5, 250, 250);
             excludePath.AddEllipse(85, 85, 100, 100);
-
 
             Region buttonRegion = new Region(circlePath);
             buttonRegion.Exclude(excludePath);
@@ -189,6 +160,23 @@ namespace SimonSays
             buttonRegion.Transform(transformMatrix);
 
             yellowButton.Region = buttonRegion;
+        }
+
+        private void testButtonColour(int colour)
+        {
+            if (Form1.order[guesses] == colour)
+            {
+                guesses++;
+                if (guesses == Form1.order.Count())
+                {
+                    ComputerTurn();
+                }
+            }
+            else
+            {
+                soundGameOver.Play();
+                GameOver();
+            }
         }
     }
 }
