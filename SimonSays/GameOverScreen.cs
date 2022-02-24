@@ -19,6 +19,19 @@ namespace SimonSays
         private void GameOverScreen_Load(object sender, EventArgs e)
         {
             lengthLabel.Text = $"{Form1.order.Count}";
+          
+            if(Form1.order.Count >= 3)
+            {
+                rankBox.BackgroundImage = Properties.Resources.squidgame2;
+            }
+            if(Form1.order.Count >= 6)
+            {
+                rankBox.BackgroundImage = Properties.Resources.squidgame3;
+            }
+            if(Form1.order.Count >= 9)
+            {
+                rankBox.BackgroundImage = Properties.Resources.squidgame4;
+            }
         }
 
         private void closeButton_Click(object sender, EventArgs e)
