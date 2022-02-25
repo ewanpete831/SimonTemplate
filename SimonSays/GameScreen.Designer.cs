@@ -87,10 +87,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
+            this.BackgroundImage = global::SimonSays.Properties.Resources.gamebg;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.yellowButton);
             this.Controls.Add(this.blueButton);
             this.Controls.Add(this.redButton);
             this.Controls.Add(this.greenButton);
+            this.DoubleBuffered = true;
             this.Name = "GameScreen";
             this.Size = new System.Drawing.Size(450, 460);
             this.Load += new System.EventHandler(this.GameScreen_Load);

@@ -20,6 +20,8 @@ namespace SimonSays
         SoundPlayer soundYellow = new SoundPlayer(Properties.Resources.yellow);
         SoundPlayer soundRed = new SoundPlayer(Properties.Resources.red);
         SoundPlayer soundGameOver = new SoundPlayer(Properties.Resources.mistake);
+
+
         public GameScreen()
         {
             InitializeComponent();
@@ -31,7 +33,7 @@ namespace SimonSays
             Form1.order.Clear();
             Refresh();
             ComputerTurn();
-        }
+        }    
 
         private void ComputerTurn()
         {
@@ -97,7 +99,6 @@ namespace SimonSays
             Refresh();
 
             testButtonColour(0);
-
         }
         private void redButton_Click_1(object sender, EventArgs e)
         {

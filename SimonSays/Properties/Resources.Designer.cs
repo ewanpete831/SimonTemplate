@@ -63,9 +63,57 @@ namespace SimonSays.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
+        internal static System.IO.UnmanagedMemoryStream BGSound {
+            get {
+                return ResourceManager.GetStream("BGSound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
         internal static System.IO.UnmanagedMemoryStream blue {
             get {
                 return ResourceManager.GetStream("blue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gamebg {
+            get {
+                object obj = ResourceManager.GetObject("gamebg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gameOver {
+            get {
+                object obj = ResourceManager.GetObject("gameOver", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gameoverBg {
+            get {
+                object obj = ResourceManager.GetObject("gameoverBg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream gameSound {
+            get {
+                return ResourceManager.GetStream("gameSound", resourceCulture);
             }
         }
         
@@ -99,39 +147,9 @@ namespace SimonSays.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap simonBG {
-            get {
-                object obj = ResourceManager.GetObject("simonBG", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap simonfinalBg {
             get {
                 object obj = ResourceManager.GetObject("simonfinalBg", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap SimonSaysImage {
-            get {
-                object obj = ResourceManager.GetObject("SimonSaysImage", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap squidBG {
-            get {
-                object obj = ResourceManager.GetObject("squidBG", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -182,16 +200,6 @@ namespace SimonSays.Properties {
         internal static System.Drawing.Bitmap squidgame4 {
             get {
                 object obj = ResourceManager.GetObject("squidgame4", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap squidlabel {
-            get {
-                object obj = ResourceManager.GetObject("squidlabel", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

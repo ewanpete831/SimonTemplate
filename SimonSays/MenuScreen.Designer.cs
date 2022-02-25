@@ -76,7 +76,7 @@
             // simonLabel
             // 
             this.simonLabel.BackColor = System.Drawing.Color.Transparent;
-            this.simonLabel.Cursor = System.Windows.Forms.Cursors.PanSouth;
+            this.simonLabel.Cursor = System.Windows.Forms.Cursors.Default;
             this.simonLabel.Font = new System.Drawing.Font("Comic Sans MS", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simonLabel.ForeColor = System.Drawing.Color.Black;
             this.simonLabel.Image = global::SimonSays.Properties.Resources.squidLabel2;
@@ -109,6 +109,7 @@
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.newButton);
             this.Controls.Add(this.pictureBox1);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
             this.Name = "MenuScreen";
             this.Size = new System.Drawing.Size(452, 453);

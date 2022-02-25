@@ -28,31 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gameOverLabel = new System.Windows.Forms.Label();
             this.patternLabel = new System.Windows.Forms.Label();
             this.lengthLabel = new System.Windows.Forms.Label();
             this.closeButton = new System.Windows.Forms.Button();
             this.rankBox = new System.Windows.Forms.PictureBox();
+            this.gameOverLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.rankBox)).BeginInit();
             this.SuspendLayout();
-            // 
-            // gameOverLabel
-            // 
-            this.gameOverLabel.AutoSize = true;
-            this.gameOverLabel.Font = new System.Drawing.Font("Comic Sans MS", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gameOverLabel.ForeColor = System.Drawing.Color.White;
-            this.gameOverLabel.Location = new System.Drawing.Point(107, 10);
-            this.gameOverLabel.Name = "gameOverLabel";
-            this.gameOverLabel.Size = new System.Drawing.Size(228, 56);
-            this.gameOverLabel.TabIndex = 0;
-            this.gameOverLabel.Text = "Game Over";
             // 
             // patternLabel
             // 
             this.patternLabel.AutoSize = true;
+            this.patternLabel.BackColor = System.Drawing.Color.Transparent;
             this.patternLabel.Font = new System.Drawing.Font("Comic Sans MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.patternLabel.ForeColor = System.Drawing.Color.White;
-            this.patternLabel.Location = new System.Drawing.Point(24, 299);
+            this.patternLabel.Location = new System.Drawing.Point(24, 302);
             this.patternLabel.Name = "patternLabel";
             this.patternLabel.Size = new System.Drawing.Size(347, 39);
             this.patternLabel.TabIndex = 1;
@@ -61,9 +51,10 @@
             // lengthLabel
             // 
             this.lengthLabel.AutoSize = true;
+            this.lengthLabel.BackColor = System.Drawing.Color.Transparent;
             this.lengthLabel.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lengthLabel.ForeColor = System.Drawing.Color.White;
-            this.lengthLabel.Location = new System.Drawing.Point(361, 305);
+            this.lengthLabel.Location = new System.Drawing.Point(357, 304);
             this.lengthLabel.Name = "lengthLabel";
             this.lengthLabel.Size = new System.Drawing.Size(30, 33);
             this.lengthLabel.TabIndex = 2;
@@ -74,7 +65,7 @@
             this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeButton.Font = new System.Drawing.Font("Comic Sans MS", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeButton.ForeColor = System.Drawing.Color.White;
-            this.closeButton.Location = new System.Drawing.Point(171, 354);
+            this.closeButton.Location = new System.Drawing.Point(171, 356);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(105, 41);
             this.closeButton.TabIndex = 3;
@@ -92,16 +83,30 @@
             this.rankBox.TabIndex = 4;
             this.rankBox.TabStop = false;
             // 
+            // gameOverLabel
+            // 
+            this.gameOverLabel.BackColor = System.Drawing.Color.Transparent;
+            this.gameOverLabel.Font = new System.Drawing.Font("Comic Sans MS", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gameOverLabel.ForeColor = System.Drawing.Color.White;
+            this.gameOverLabel.Image = global::SimonSays.Properties.Resources.gameOver;
+            this.gameOverLabel.Location = new System.Drawing.Point(55, 0);
+            this.gameOverLabel.Name = "gameOverLabel";
+            this.gameOverLabel.Size = new System.Drawing.Size(339, 92);
+            this.gameOverLabel.TabIndex = 0;
+            // 
             // GameOverScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
+            this.BackgroundImage = global::SimonSays.Properties.Resources.gameoverBg;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.rankBox);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.lengthLabel);
             this.Controls.Add(this.patternLabel);
             this.Controls.Add(this.gameOverLabel);
+            this.DoubleBuffered = true;
             this.Name = "GameOverScreen";
             this.Size = new System.Drawing.Size(452, 462);
             this.Load += new System.EventHandler(this.GameOverScreen_Load);

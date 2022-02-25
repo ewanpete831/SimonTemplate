@@ -14,6 +14,8 @@ namespace SimonSays
 {
     public partial class Form1 : Form
     {
+        public static SoundPlayer bgMusic = new SoundPlayer(Properties.Resources.BGSound);
+        public static SoundPlayer gameoverSound = new SoundPlayer(Properties.Resources.gameSound);
         public static List<int> order = new List<int>();
 
         public Form1()

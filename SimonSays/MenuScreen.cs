@@ -15,6 +15,7 @@ namespace SimonSays
         public MenuScreen()
         {
             InitializeComponent();
+            Form1.bgMusic.PlayLooping();
         }
 
         private void newButton_Click(object sender, EventArgs e)
