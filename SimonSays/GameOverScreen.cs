@@ -14,6 +14,7 @@ namespace SimonSays
         public GameOverScreen()
         {
             InitializeComponent();
+            Form1.gameoverSound.PlayLooping();
         }
 
         private void GameOverScreen_Load(object sender, EventArgs e)

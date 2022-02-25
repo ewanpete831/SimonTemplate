@@ -80,7 +80,7 @@
             this.simonLabel.Font = new System.Drawing.Font("Comic Sans MS", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simonLabel.ForeColor = System.Drawing.Color.Black;
             this.simonLabel.Image = global::SimonSays.Properties.Resources.squidLabel2;
-            this.simonLabel.Location = new System.Drawing.Point(-90, 79);
+            this.simonLabel.Location = new System.Drawing.Point(-92, 79);
             this.simonLabel.Name = "simonLabel";
             this.simonLabel.Size = new System.Drawing.Size(639, 116);
             this.simonLabel.TabIndex = 21;
