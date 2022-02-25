@@ -109,9 +109,39 @@ namespace SimonSays.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap simonfinalBg {
+            get {
+                object obj = ResourceManager.GetObject("simonfinalBg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SimonSaysImage {
             get {
                 object obj = ResourceManager.GetObject("SimonSaysImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap squidBG {
+            get {
+                object obj = ResourceManager.GetObject("squidBG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap squidbg2 {
+            get {
+                object obj = ResourceManager.GetObject("squidbg2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -152,6 +182,26 @@ namespace SimonSays.Properties {
         internal static System.Drawing.Bitmap squidgame4 {
             get {
                 object obj = ResourceManager.GetObject("squidgame4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap squidlabel {
+            get {
+                object obj = ResourceManager.GetObject("squidlabel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap squidLabel2 {
+            get {
+                object obj = ResourceManager.GetObject("squidLabel2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
