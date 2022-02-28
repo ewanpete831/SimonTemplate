@@ -14,13 +14,13 @@ namespace SimonSays
 {
     public partial class GameScreen : UserControl
     {
+        //create variables and sound players
         int guesses = 0;
         SoundPlayer soundGreen = new SoundPlayer(Properties.Resources.green);
         SoundPlayer soundBlue = new SoundPlayer(Properties.Resources.blue);
         SoundPlayer soundYellow = new SoundPlayer(Properties.Resources.yellow);
         SoundPlayer soundRed = new SoundPlayer(Properties.Resources.red);
         SoundPlayer soundGameOver = new SoundPlayer(Properties.Resources.mistake);
-
 
         public GameScreen()
         {
@@ -29,6 +29,7 @@ namespace SimonSays
 
         private void GameScreen_Load(object sender, EventArgs e)
         {
+            //create buttons and start computer turn
             createRegions();
             Form1.order.Clear();
             Refresh();
@@ -38,9 +39,11 @@ namespace SimonSays
         private void ComputerTurn()
         {
             Thread.Sleep(1000);
+            //pick a new colour and add to list
             Random randNum = new Random();
             Form1.order.Add(randNum.Next(0, 4));
 
+            //play colours in order
             for (int i = 0; i < Form1.order.Count(); i++)
             {
                 if (Form1.order[i] == 0)
@@ -86,56 +89,59 @@ namespace SimonSays
 
         public void GameOver()
         {
+            //create game over screen
             Form1.ChangeScreen(this, new GameOverScreen());
         }
 
+
+        //light up each button, and play a sound when clicked
+        //test if correct button is pressed
         private void greenButton_Click(object sender, EventArgs e)
         {
-            greenButton.BackColor = Color.Lime;
-            soundGreen.Play();
-            Refresh();
-            Thread.Sleep(200);
-            greenButton.BackColor = Color.ForestGreen;
-            Refresh();
+                greenButton.BackColor = Color.Lime;
+                soundGreen.Play();
+                Refresh();
+                Thread.Sleep(200);
+                greenButton.BackColor = Color.ForestGreen;
+                Refresh();
 
-            testButtonColour(0);
+                testButtonColour(0);
         }
         private void redButton_Click_1(object sender, EventArgs e)
-        {
-            redButton.BackColor = Color.Red;
-            soundRed.Play();
-            Refresh();
-            Thread.Sleep(200);
-            redButton.BackColor = Color.DarkRed;
-            Refresh();
+        { 
+                redButton.BackColor = Color.Red;
+                soundRed.Play();
+                Refresh();
+                Thread.Sleep(200);
+                redButton.BackColor = Color.DarkRed;
+                Refresh();
 
-            testButtonColour(1);
+                testButtonColour(1);
         }
-
         private void yellowButton_Click_1(object sender, EventArgs e)
         {
-            yellowButton.BackColor = Color.Yellow;
-            soundYellow.Play();
-            Refresh();
-            Thread.Sleep(200);
-            yellowButton.BackColor = Color.Goldenrod;
-            Refresh();
+                yellowButton.BackColor = Color.Yellow;
+                soundYellow.Play();
+                Refresh();
+                Thread.Sleep(200);
+                yellowButton.BackColor = Color.Goldenrod;
+                Refresh();
 
-            testButtonColour(2);
+                testButtonColour(2);
         }
-
         private void blueButton_Click_1(object sender, EventArgs e)
         {
-            blueButton.BackColor = Color.RoyalBlue;
-            soundBlue.Play();
-            Refresh();
-            Thread.Sleep(200);
-            blueButton.BackColor = Color.DarkBlue;
-            Refresh();
+                blueButton.BackColor = Color.RoyalBlue;
+                soundBlue.Play();
+                Refresh();
+                Thread.Sleep(200);
+                blueButton.BackColor = Color.DarkBlue;
+                Refresh();
 
-            testButtonColour(3);
+                testButtonColour(3);
         }
 
+        //create button regions
         private void createRegions()
         {
             GraphicsPath circlePath = new GraphicsPath();
@@ -163,6 +169,8 @@ namespace SimonSays
             yellowButton.Region = buttonRegion;
         }
 
+
+        //test if button pressed is correct button
         private void testButtonColour(int colour)
         {
             if (Form1.order[guesses] == colour)

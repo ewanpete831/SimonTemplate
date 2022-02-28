@@ -14,9 +14,11 @@ namespace SimonSays
         public GameOverScreen()
         {
             InitializeComponent();
+            //play music on game over screen
             Form1.gameoverSound.PlayLooping();
         }
 
+        //shows a character depending on how high score was
         private void GameOverScreen_Load(object sender, EventArgs e)
         {
             lengthLabel.Text = $"{Form1.order.Count}";
@@ -37,6 +39,7 @@ namespace SimonSays
 
         private void closeButton_Click(object sender, EventArgs e)
         {
+            //open menu screen
             Form1.ChangeScreen(this, new MenuScreen());
         }
     }

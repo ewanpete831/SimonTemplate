@@ -15,22 +15,23 @@ namespace SimonSays
         public MenuScreen()
         {
             InitializeComponent();
+            //Play Music
             Form1.bgMusic.PlayLooping();
         }
-
         private void newButton_Click(object sender, EventArgs e)
         {
+            //Create Game Screen
             Form1.ChangeScreen(this, new GameScreen());
         }
-
         private void exitButton_Click(object sender, EventArgs e)
         {
+            //Close Program
             Form f = this.FindForm();
             f.Close();
         }
-
         private void createRegions()
         {
+            //Create regions for start and exit buttons
             GraphicsPath circlePath = new GraphicsPath();
             GraphicsPath excludePath = new GraphicsPath();
             circlePath.AddEllipse(0, 0, 275, 275);
@@ -47,7 +48,6 @@ namespace SimonSays
 
             exitButton.Region = buttonRegion;
         }
-
         private void MenuScreen_Load(object sender, EventArgs e)
         {
             createRegions();
